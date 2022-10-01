@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"github.com/MatWich/Console-clock/digits"
+	"github.com/inancgumus/screen"
+	"time"
 )
 
 func main() {
@@ -15,32 +16,39 @@ func main() {
 		}
 		fmt.Println()
 	}
+	// fmt.Println("\033[2J")
 
-	currentTime := time.Now().Local()
+	screen.Clear()
 
-	fmt.Println(currentTime)
-	hour, min, sec := currentTime.Hour(), currentTime.Minute(), currentTime.Second()
-	fmt.Printf("%d:%d:%d\n", hour, min, sec)
+	for {
+		screen.MoveTopLeft()
+		currentTime := time.Now().Local()
 
-	colon := digits.GetColon()
+		fmt.Println(currentTime)
+		hour, min, sec := currentTime.Hour(), currentTime.Minute(), currentTime.Second()
+		fmt.Printf("%d:%d:%d\n", hour, min, sec)
 
-	clock := [...][5]string {
-		numbers[hour/10], 
-		numbers[hour%10], 
-		colon,
-		numbers[min/10], 
-		numbers[min%10],
-		colon,
-		numbers[sec/10],
-		numbers[sec%10],
+		colon := digits.GetColon()
 
-	}
-
-	for line := range clock[0] {
-		for digit := range clock {
-			fmt.Print(clock[digit][line])
+		clock := [...][5]string{
+			numbers[hour/10],
+			numbers[hour%10],
+			colon,
+			numbers[min/10],
+			numbers[min%10],
+			colon,
+			numbers[sec/10],
+			numbers[sec%10],
 		}
-		fmt.Println()
+
+		for line := range clock[0] {
+			for digit := range clock {
+				fmt.Print(clock[digit][line], " ")
+			}
+			fmt.Println()
+		}
+
+		time.Sleep(time.Second)
 	}
 
 }
