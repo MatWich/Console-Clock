@@ -1,4 +1,4 @@
-package myvars
+package digits
 type placeholder [5]string
 
 func GetDigits() [10]placeholder {
@@ -88,4 +88,13 @@ func GetDigits() [10]placeholder {
 
 	return Digits
 }
-	
+
+func GetColon() placeholder {
+	return placeholder {
+		"   ",
+		" ▒ ",
+		"   ",
+		" ▒ ",
+		"   ",
+	}
+}
