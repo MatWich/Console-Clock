@@ -1,8 +1,9 @@
 package digits
-type placeholder [5]string
 
-func GetDigits() [10]placeholder {
-	zero := placeholder{
+type Placeholder [5]string
+
+func GetDigits() [10]Placeholder {
+	zero := Placeholder{
 		"███",
 		"█ █",
 		"█ █",
@@ -10,7 +11,7 @@ func GetDigits() [10]placeholder {
 		"███",
 	}
 
-	one := placeholder{
+	one := Placeholder{
 		"██ ",
 		" █ ",
 		" █ ",
@@ -18,7 +19,7 @@ func GetDigits() [10]placeholder {
 		"███",
 	}
 
-	two := placeholder{
+	two := Placeholder{
 		"███",
 		"  █",
 		"███",
@@ -26,7 +27,7 @@ func GetDigits() [10]placeholder {
 		"███",
 	}
 
-	three := placeholder{
+	three := Placeholder{
 		"███",
 		"  █",
 		"███",
@@ -34,7 +35,7 @@ func GetDigits() [10]placeholder {
 		"███",
 	}
 
-	four := placeholder{
+	four := Placeholder{
 		"█ █",
 		"█ █",
 		"███",
@@ -42,7 +43,7 @@ func GetDigits() [10]placeholder {
 		"  █",
 	}
 
-	five := placeholder{
+	five := Placeholder{
 		"███",
 		"█  ",
 		"███",
@@ -50,7 +51,7 @@ func GetDigits() [10]placeholder {
 		"███",
 	}
 
-	six := placeholder{
+	six := Placeholder{
 		"███",
 		"█  ",
 		"███",
@@ -58,7 +59,7 @@ func GetDigits() [10]placeholder {
 		"███",
 	}
 
-	seven := placeholder{
+	seven := Placeholder{
 		"███",
 		"  █",
 		"  █",
@@ -66,7 +67,7 @@ func GetDigits() [10]placeholder {
 		"  █",
 	}
 
-	eight := placeholder{
+	eight := Placeholder{
 		"███",
 		"█ █",
 		"███",
@@ -74,7 +75,7 @@ func GetDigits() [10]placeholder {
 		"███",
 	}
 
-	nine := placeholder{
+	nine := Placeholder{
 		"███",
 		"█ █",
 		"███",
@@ -82,15 +83,15 @@ func GetDigits() [10]placeholder {
 		"███",
 	}
 
-	Digits := [...]placeholder{
+	Digits := [...]Placeholder{
 		zero, one, two, three, four, five, six, seven, eight, nine,
 	}
 
 	return Digits
 }
 
-func GetColon() placeholder {
-	return placeholder {
+func GetColon() Placeholder {
+	return Placeholder{
 		"   ",
 		" ▒ ",
 		"   ",

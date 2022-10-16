@@ -30,7 +30,7 @@ func main() {
 
 		colon := digits.GetColon()
 
-		clock := [...][5]string{
+		clock := [...]digits.Placeholder{
 			numbers[hour/10],
 			numbers[hour%10],
 			colon,
